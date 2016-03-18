@@ -1,5 +1,6 @@
 FROM continuumio/miniconda3
-RUN apt-get install pkg-config
+RUN apt-get update
+RUN apt-get install -y pkg-config libfreetype6-dev
 
 COPY environment.yml /environment.yml
 RUN conda env create -f /environment.yml
