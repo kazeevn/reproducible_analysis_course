@@ -3,7 +3,7 @@
 NOTEBOOK_DIR=/root/analysis
 source activate open-ml 
 
-if [ "$JPY_API_TOKEN" != "" ] ; then
+if [ -n "$JPY_API_TOKEN" ] ; then
 jupyterhub-singleuser \
   --port=8888 \
   --ip=0.0.0.0 \
