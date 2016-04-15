@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="author" content="(Никита Казеев)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:////home/kna/reveal.js-3.2.0/css/reveal.css"/>
+<link rel="stylesheet" href="file:////home/kna/reveal.js-3.2.0/css/theme/csc_rep.css" id="theme"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:////home/kna/reveal.js-3.2.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1></h1>
+<h2>Никита Казеев</h2>
+<h2><a href="mailto:kazeevn@yandex-team.ru">kazeevn@yandex-team.ru</a></h2>
+<h2></h2>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>&#1057;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1085;&#1080;&#1077;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgheadline1">1. Хранение данных</a></li>
+<li><a href="#/slide-orgheadline4">2. Less than RAM size</a>
+<ul>
+<li><a href="#/slide-orgheadline2">2.1. Формат</a></li>
+<li><a href="#/slide-orgheadline3">2.2. Git Large File Storage</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgheadline10">3. More than RAM size</a>
+<ul>
+<li><a href="#/slide-orgheadline5">3.1. Откуда начать?</a></li>
+<li><a href="#/slide-orgheadline6">3.2. Уроки из ЦЕРНа</a></li>
+<li><a href="#/slide-orgheadline7">3.3. CERN GRID</a></li>
+<li><a href="#/slide-orgheadline8">3.4. Hadoop</a></li>
+<li><a href="#/slide-orgheadline9">3.5. Contemporary NoSQL</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgheadline12">4. Поделиться данными</a>
+<ul>
+<li><a href="#/slide-orgheadline11">4.1. Научный зоопарк</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-orgheadline1">
+<h2 id="orgheadline1"><span class="section-number-2">1</span> Хранение данных</h2>
+<ul>
+<li>Без данных исследование не может быть (вос)произведено.</li>
+<li>Mutable data ruins reproducibility</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline4">
+<h2 id="orgheadline4"><span class="section-number-2">2</span> Less than RAM size</h2>
+<ul>
+<li>Не проблема</li>
+<li>файл на облачном диске, web-сервере, и т.д.</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2"><span class="section-number-3">2.1</span> Формат</h3>
+<ul>
+<li>.csv.gz, .json.gz: кросс-платформенные, гибкие, инетрпретируемые,
+медленные</li>
+<li>HDF5, ROOT: бинарные, кросс-платформенные</li>
+<li>Формат Вашего инструмента (если Вы уверенны, что сможете прочесть
+его в будущих версиях)</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline3">
+<h3 id="orgheadline3"><span class="section-number-3">2.2</span> Git Large File Storage</h3>
+<ul>
+<li>Версионирование больших файлов</li>
+<li>Интеграция с git без неудобного увеличения размера репозитория</li>
+<li>Open Source <a href="https://git-lfs.github.com/">https://git-lfs.github.com/</a></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline10">
+<h2 id="orgheadline10"><span class="section-number-2">3</span> More than RAM size</h2>
+<ul>
+<li>"Big Data", "NoSQL"</li>
+<li>Распределённые системы</li>
+<li>Горизонтальная масштабируемость</li>
+<li>Выбор зависит от задачи</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline5">
+<h3 id="orgheadline5"><span class="section-number-3">3.1</span> Откуда начать?</h3>
+<ul>
+<li>Mainframes -&gt; supercomputers (not part of the talk)</li>
+<li><a href="http://indico.cern.ch/getFile.py/access?contribId=521&amp;sessionId=21&amp;resId=0&amp;materialId=slides&amp;confId=0">http://indico.cern.ch/getFile.py/access?contribId=521&amp;sessionId=21&amp;resId=0&amp;materialId=slides&amp;confId=0</a></li>
+<li>Google MapReduce (2004), Google File System (2003)</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6"><span class="section-number-3">3.2</span> Уроки из ЦЕРНа</h3>
+<ul>
+<li>Данные можно фильтровать. ЦЕРН выбрасывает 99.99%.</li>
+<li>Обработка должна быть возможно более парралельной. В ЦЕРНе
+алгоритмы применяются к болшому количеству независимых объектов
+одной природы. В результате возможно георафическая
+распределённость - задача выполняется сразу в нескольких странах.</li>
+<li>Локальность. Стоит обрабатывать данные там же, где они хранятся.</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7"><span class="section-number-3">3.3</span> CERN GRID</h3>
+<ul>
+<li>30 Пб в год</li>
+<li>170 дата-центров, 42 страны</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline8">
+<h3 id="orgheadline8"><span class="section-number-3">3.4</span> Hadoop</h3>
+<ul>
+<li>Масштабируем</li>
+<li>Стар и отлажен</li>
+<li>Устойчив к сбоям</li>
+<li>Open Source</li>
+<li>Заточен под парадигму MapReduce</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9"><span class="section-number-3">3.5</span> Contemporary NoSQL</h3>
+<ul>
+<li>Выбор зависит от задачи</li>
+<li>Общий прицип - чем проще операции, тем быстрее и надёжнее система</li>
+<li>Redis, HBase, Cassandra, Elastic, &#x2026;</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline12">
+<h2 id="orgheadline12"><span class="section-number-2">4</span> Поделиться данными</h2>
+<ul>
+<li>Будут ли они доступны через 30 лет?</li>
+<li>Как заинтересованные их найдут?</li>
+<li>Как сослаться на их использование?</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline11">
+<h3 id="orgheadline11"><span class="section-number-3">4.1</span> Научный зоопарк</h3>
+<ul>
+<li><a href="https://data.mendeley.com/">https://data.mendeley.com/</a></li>
+<li><a href="https://www.dataone.org/">https://www.dataone.org/</a></li>
+<li><a href="http://www.openml.org/">http://www.openml.org/</a></li>
+<li><a href="https://zenodo.org/">https://zenodo.org/</a></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="file:////home/kna/reveal.js-3.2.0/lib/js/head.min.js"></script>
+<script src="file:////home/kna/reveal.js-3.2.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:////home/kna/reveal.js-3.2.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'file:////home/kna/reveal.js-3.2.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:////home/kna/reveal.js-3.2.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:////home/kna/reveal.js-3.2.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'file:////home/kna/reveal.js-3.2.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
