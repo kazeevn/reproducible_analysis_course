@@ -1,25 +1,30 @@
 #+REVEAL_THEME: csc_rep
 #+AUTHOR: Никита Казеев
+#+TITLE: Обзор технологий хранения данных
+#+DATE: 16.04.2016
 #+LANGUAGE: ru
+#+REVEAL_TITLE_SLIDE_TEMPLATE: <h2>%t</h2> %a, %e <br> %d
+#+OPTIONS: toc:nil
 # #+REVEAL_INIT_SCRIPT: parallaxBackgroundImage: 'http://wwwold.jinr.ru/img_news/15/270315/tir_1-otkrytie.jpg',
 # #+REVEAL_INIT_SCRIPT: parallaxBackgroundSize: '3739px 2617px'
 
-* Хранение данных
+* Введение
   + Без данных исследование не может быть (вос)произведено.
-  + Mutable data ruins reproducibility
-* Less than RAM size
+  + Изменяемые (mutable) данные качественно затрудняют воспроизвидение
+* Данные помещаются в RAM
   + Не проблема
-  + файл на облачном диске, web-сервере, и т.д.
+  + Файл на облачном диске, web-сервере, и т.д.
 ** Формат
    + .csv.gz, .json.gz: кросс-платформенные, гибкие, инетрпретируемые,
      медленные
    + HDF5, ROOT: бинарные, кросс-платформенные
-   + Формат Вашего инструмента (если Вы уверенны, что сможете прочесть
-     его в будущих версиях)
+   + Формат Вашего инструмента. Если Вы уверенны, что сможете прочесть
+     его в будущих версиях - особенно актуально для закрытых
+     (proprietary) форматов.
 ** Git Large File Storage
    + Версионирование больших файлов
    + Интеграция с git без неудобного увеличения размера репозитория
-   + Open Source https://git-lfs.github.com/
+   + Код клиента и сервера открыт https://git-lfs.github.com/
 * More than RAM size
   + "Big Data", "NoSQL"
   + Распределённые системы
