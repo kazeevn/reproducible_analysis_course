@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8"/>
-<title>Обзор технологий хранения данных</title>
+<title>Хранение даных воспроизводимого эксперимента</title>
 <meta name="author" content="(Никита Казеев)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
@@ -25,7 +25,7 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h2>Обзор технологий хранения данных</h2> Никита Казеев, <a href="mailto:kazeevn@yandex-team.ru">kazeevn@yandex-team.ru</a> <br> 16.04.2016
+<h2>Хранение даных воспроизводимого эксперимента</h2> Никита Казеев, <a href="mailto:kazeevn@yandex-team.ru">kazeevn@yandex-team.ru</a> <br> 16.04.2016
 </section>
 
 <section>
@@ -33,7 +33,7 @@
 <h2 id="orgheadline1"><span class="section-number-2">1</span> Введение</h2>
 <ul>
 <li>Без данных исследование не может быть (вос)произведено.</li>
-<li>Изменяемые (mutable) данные качественно затрудняют воспроизвидение</li>
+<li>Изменяемые (mutable) данные качественно затрудняют воспроизведение</li>
 
 </ul>
 </section>
@@ -50,7 +50,7 @@
 <section id="slide-orgheadline2">
 <h3 id="orgheadline2"><span class="section-number-3">2.1</span> Формат</h3>
 <ul>
-<li>.csv.gz, .json.gz: кросс-платформенные, гибкие, инетрпретируемые,
+<li>.csv.gz, .json.gz: кросс-платформенные, гибкие, интерпретируемые,
 медленные</li>
 <li>HDF5, ROOT: бинарные, кросс-платформенные</li>
 <li>Формат Вашего инструмента. Если Вы уверенны, что сможете прочесть
@@ -63,35 +63,28 @@
 <h3 id="orgheadline3"><span class="section-number-3">2.2</span> Git Large File Storage</h3>
 <ul>
 <li>Версионирование больших файлов</li>
-<li>Прозрачная интеграция с git без существееного увеличения размера репозитория</li>
-<li>Код клиента и сервера открыт <a href="https://git-lfs.github.com/">https://git-lfs.github.com/</a></li>
+<li>Прозрачная интеграция с git без существенного увеличения размера репозитория</li>
+<li>Код клиента и сервера <a href="https://git-lfs.github.com/">открыт</a></li>
+<li><a href="https://github.com/yandexdataschool/reproducible_analysis_course/blob/py3/data_storage/data_storage.pdf">Пример</a> в репозитории курса</li>
 
 </ul>
 </section>
 </section>
 <section>
-<section id="slide-orgheadline10">
-<h2 id="orgheadline10"><span class="section-number-2">3</span> Данные не помещаются в RAM</h2>
+<section id="slide-orgheadline9">
+<h2 id="orgheadline9"><span class="section-number-2">3</span> Данные не помещаются в RAM</h2>
 <ul>
 <li>"Big Data", "NoSQL"</li>
 <li>Распределённые системы</li>
 <li>Горизонтальная масштабируемость</li>
-<li>Устойчиавость к отказу оборудования</li>
+<li>Устойчивость к отказу оборудования</li>
 <li>Выбор зависит от задачи</li>
 
 </ul>
+
 </section>
 <section id="slide-orgheadline5">
-<h3 id="orgheadline5"><span class="section-number-3">3.1</span> История</h3>
-<ul>
-<li>Mainframes и суперкомпьютеры - не часть</li>
-<li><a href="http://indico.cern.ch/getFile.py/access?contribId=521&amp;sessionId=21&amp;resId=0&amp;materialId=slides&amp;confId=0">http://indico.cern.ch/getFile.py/access?contribId=521&amp;sessionId=21&amp;resId=0&amp;materialId=slides&amp;confId=0</a></li>
-<li>Google MapReduce (2004), Google File System (2003)</li>
-
-</ul>
-</section>
-<section id="slide-orgheadline6">
-<h3 id="orgheadline6"><span class="section-number-3">3.2</span> Hadoop</h3>
+<h3 id="orgheadline5"><span class="section-number-3">3.1</span> Hadoop</h3>
 <ul>
 <li>Масштабируем</li>
 <li>Стар и отлажен</li>
@@ -101,30 +94,31 @@
 
 </ul>
 </section>
-<section id="slide-orgheadline7">
-<h3 id="orgheadline7"><span class="section-number-3">3.3</span> Contemporary NoSQL</h3>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6"><span class="section-number-3">3.2</span> Other NoSQL</h3>
 <ul>
-<li>Выбор зависит от задачи</li>
-<li>Общий прицип - чем проще операции, тем быстрее и надёжнее система</li>
+<li>Выбор зависит от задачи. Предмет для отдельного курса.</li>
+<li>Общий принцип - чем проще операции, тем быстрее и надёжнее система</li>
 <li>Redis, HBase, Cassandra, Elastic, &#x2026;</li>
 
 </ul>
 </section>
-<section id="slide-orgheadline8">
-<h3 id="orgheadline8"><span class="section-number-3">3.4</span> CERN GRID</h3>
+<section id="slide-orgheadline7" data-background="WLCG-snapshot-28112013.jpg">
+<h3 id="orgheadline7"><span class="section-number-3">3.3</span> CERN GRID</h3>
+<style>  #orgheadline7, #slide-orgheadline7 {background-color: white;} </style>
 <ul>
 <li>30 Пб в год</li>
 <li>170 дата-центров, 42 страны</li>
 
 </ul>
 </section>
-<section id="slide-orgheadline9">
-<h3 id="orgheadline9"><span class="section-number-3">3.5</span> Уроки из ЦЕРНа</h3>
+<section id="slide-orgheadline8">
+<h3 id="orgheadline8"><span class="section-number-3">3.4</span> Уроки из ЦЕРНа</h3>
 <ul>
 <li>Данные можно фильтровать. ЦЕРН выбрасывает 99.99%.</li>
-<li>Обработка должна быть возможно более парралельной. В ЦЕРНе
-алгоритмы применяются к болшому количеству независимых объектов
-одной природы. В результате возможно георафическая
+<li>Обработка должна быть возможно более параллельной. В ЦЕРНе
+алгоритмы применяются к большому количеству независимых объектов
+одной природы. В результате возможно географическая
 распределённость.</li>
 <li>Локальность. Стоит обрабатывать данные там же, где они хранятся.</li>
 
@@ -132,17 +126,18 @@
 </section>
 </section>
 <section>
-<section id="slide-orgheadline12">
-<h2 id="orgheadline12"><span class="section-number-2">4</span> Поделиться данными</h2>
+<section id="slide-orgheadline11">
+<h2 id="orgheadline11"><span class="section-number-2">4</span> Публикация данных</h2>
 <ul>
+<li>Необходима, чтобы другие могли ими воспользоваться.</li>
 <li>Будут ли они доступны через 30 лет?</li>
-<li>Как заинтересованные их найдут?</li>
-<li>Как сослаться на их использование?</li>
+<li>Будет ли их просто найти?</li>
+<li>Будет ли у пользователей простой способ сослаться на источник?</li>
 
 </ul>
 </section>
-<section id="slide-orgheadline11">
-<h3 id="orgheadline11"><span class="section-number-3">4.1</span> Научный зоопарк</h3>
+<section id="slide-orgheadline10">
+<h3 id="orgheadline10"><span class="section-number-3">4.1</span> Много аналогичных порталов</h3>
 <ul>
 <li><a href="https://data.mendeley.com/">https://data.mendeley.com/</a></li>
 <li><a href="https://www.dataone.org/">https://www.dataone.org/</a></li>
@@ -172,7 +167,7 @@ keyboard: true,
 overview: true,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
 transitionSpeed: 'default',
 multiplex: {
     secret: '', // null if client
