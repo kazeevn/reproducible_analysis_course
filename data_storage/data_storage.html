@@ -30,17 +30,17 @@
 
 <section>
 <section id="slide-orgheadline1">
-<h2 id="orgheadline1"><span class="section-number-2">1</span> Хранение данных</h2>
+<h2 id="orgheadline1"><span class="section-number-2">1</span> Введение</h2>
 <ul>
 <li>Без данных исследование не может быть (вос)произведено.</li>
-<li>Mutable data ruins reproducibility</li>
+<li>Изменяемые (mutable) данные качественно затрудняют воспроизвидение</li>
 
 </ul>
 </section>
 </section>
 <section>
 <section id="slide-orgheadline4">
-<h2 id="orgheadline4"><span class="section-number-2">2</span> Less than RAM size</h2>
+<h2 id="orgheadline4"><span class="section-number-2">2</span> Данные помещаются в RAM</h2>
 <ul>
 <li>Не проблема</li>
 <li>Файл на облачном диске, web-сервере, и т.д.</li>
@@ -53,8 +53,9 @@
 <li>.csv.gz, .json.gz: кросс-платформенные, гибкие, инетрпретируемые,
 медленные</li>
 <li>HDF5, ROOT: бинарные, кросс-платформенные</li>
-<li>Формат Вашего инструмента (если Вы уверенны, что сможете прочесть
-его в будущих версиях)</li>
+<li>Формат Вашего инструмента. Если Вы уверенны, что сможете прочесть
+его в будущих версиях - особенно актуально для закрытых
+(proprietary) форматов.</li>
 
 </ul>
 </section>
@@ -62,54 +63,35 @@
 <h3 id="orgheadline3"><span class="section-number-3">2.2</span> Git Large File Storage</h3>
 <ul>
 <li>Версионирование больших файлов</li>
-<li>Интеграция с git без неудобного увеличения размера репозитория</li>
-<li>Open Source <a href="https://git-lfs.github.com/">https://git-lfs.github.com/</a></li>
+<li>Прозрачная интеграция с git без существееного увеличения размера репозитория</li>
+<li>Код клиента и сервера открыт <a href="https://git-lfs.github.com/">https://git-lfs.github.com/</a></li>
 
 </ul>
 </section>
 </section>
 <section>
 <section id="slide-orgheadline10">
-<h2 id="orgheadline10"><span class="section-number-2">3</span> More than RAM size</h2>
+<h2 id="orgheadline10"><span class="section-number-2">3</span> Данные не помещаются в RAM</h2>
 <ul>
 <li>"Big Data", "NoSQL"</li>
 <li>Распределённые системы</li>
 <li>Горизонтальная масштабируемость</li>
+<li>Устойчиавость к отказу оборудования</li>
 <li>Выбор зависит от задачи</li>
 
 </ul>
 </section>
 <section id="slide-orgheadline5">
-<h3 id="orgheadline5"><span class="section-number-3">3.1</span> Откуда начать?</h3>
+<h3 id="orgheadline5"><span class="section-number-3">3.1</span> История</h3>
 <ul>
-<li>Mainframes -&gt; supercomputers (not part of the talk)</li>
+<li>Mainframes и суперкомпьютеры - не часть</li>
 <li><a href="http://indico.cern.ch/getFile.py/access?contribId=521&amp;sessionId=21&amp;resId=0&amp;materialId=slides&amp;confId=0">http://indico.cern.ch/getFile.py/access?contribId=521&amp;sessionId=21&amp;resId=0&amp;materialId=slides&amp;confId=0</a></li>
 <li>Google MapReduce (2004), Google File System (2003)</li>
 
 </ul>
 </section>
 <section id="slide-orgheadline6">
-<h3 id="orgheadline6"><span class="section-number-3">3.2</span> Уроки из ЦЕРНа</h3>
-<ul>
-<li>Данные можно фильтровать. ЦЕРН выбрасывает 99.99%.</li>
-<li>Обработка должна быть возможно более парралельной. В ЦЕРНе
-алгоритмы применяются к болшому количеству независимых объектов
-одной природы. В результате возможно георафическая
-распределённость - задача выполняется сразу в нескольких странах.</li>
-<li>Локальность. Стоит обрабатывать данные там же, где они хранятся.</li>
-
-</ul>
-</section>
-<section id="slide-orgheadline7">
-<h3 id="orgheadline7"><span class="section-number-3">3.3</span> CERN GRID</h3>
-<ul>
-<li>30 Пб в год</li>
-<li>170 дата-центров, 42 страны</li>
-
-</ul>
-</section>
-<section id="slide-orgheadline8">
-<h3 id="orgheadline8"><span class="section-number-3">3.4</span> Hadoop</h3>
+<h3 id="orgheadline6"><span class="section-number-3">3.2</span> Hadoop</h3>
 <ul>
 <li>Масштабируем</li>
 <li>Стар и отлажен</li>
@@ -119,12 +101,32 @@
 
 </ul>
 </section>
-<section id="slide-orgheadline9">
-<h3 id="orgheadline9"><span class="section-number-3">3.5</span> Contemporary NoSQL</h3>
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7"><span class="section-number-3">3.3</span> Contemporary NoSQL</h3>
 <ul>
 <li>Выбор зависит от задачи</li>
 <li>Общий прицип - чем проще операции, тем быстрее и надёжнее система</li>
 <li>Redis, HBase, Cassandra, Elastic, &#x2026;</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline8">
+<h3 id="orgheadline8"><span class="section-number-3">3.4</span> CERN GRID</h3>
+<ul>
+<li>30 Пб в год</li>
+<li>170 дата-центров, 42 страны</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9"><span class="section-number-3">3.5</span> Уроки из ЦЕРНа</h3>
+<ul>
+<li>Данные можно фильтровать. ЦЕРН выбрасывает 99.99%.</li>
+<li>Обработка должна быть возможно более парралельной. В ЦЕРНе
+алгоритмы применяются к болшому количеству независимых объектов
+одной природы. В результате возможно георафическая
+распределённость.</li>
+<li>Локальность. Стоит обрабатывать данные там же, где они хранятся.</li>
 
 </ul>
 </section>
