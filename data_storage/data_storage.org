@@ -1,6 +1,8 @@
 #+REVEAL_THEME: csc_rep
 #+AUTHOR: Никита Казеев
 #+LANGUAGE: ru
+# #+REVEAL_INIT_SCRIPT: parallaxBackgroundImage: 'http://wwwold.jinr.ru/img_news/15/270315/tir_1-otkrytie.jpg',
+# #+REVEAL_INIT_SCRIPT: parallaxBackgroundSize: '3739px 2617px'
 
 * Хранение данных
   + Без данных исследование не может быть (вос)произведено.
